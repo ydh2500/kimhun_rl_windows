@@ -42,7 +42,11 @@ rList = []
 start_time = time.time()
 
 init = tf.global_variables_initializer()
-with tf.Session() as sess:
+config = tf.ConfigProto(
+        device_count = {'GPU': 0}
+        )
+
+with tf.Session(config=config) as sess:
     sess.run(init)
     for i in range(num_episodes):
         e = 1. / ((i / 10) + 1)

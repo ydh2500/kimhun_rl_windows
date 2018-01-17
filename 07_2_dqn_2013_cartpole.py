@@ -16,6 +16,7 @@ import gym
 from gym import wrappers
 
 env = gym.make('CartPole-v0')
+env._max_episode_steps = 10001
 
 # Constants defining our neural network
 input_size = env.observation_space.shape[0]
@@ -72,11 +73,14 @@ def bot_play(mainDQN, env=env):
             break
 
 def main():
-    max_episodes = 5000
+    max_episodes = 1000
     # store the previous observations in replay memory
     replay_buffer = deque()
-
-    with tf.Session() as sess:
+    config = tf.ConfigProto(
+            device_count = {'GPU': 0}
+            )
+    
+    with tf.Session(config=config) as sess:
         mainDQN = dqn.DQN(sess, input_size, output_size)
         tf.global_variables_initializer().run()
 
