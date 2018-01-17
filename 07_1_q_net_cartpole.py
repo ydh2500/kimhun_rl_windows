@@ -1,3 +1,5 @@
+#07_1_q_net_cartpole.py
+
 '''
 This code is based on
 https://github.com/hunkim/DeepRL-Agents
@@ -21,7 +23,8 @@ output_size = env.action_space.n;
 X = tf.placeholder(tf.float32, [None, input_size], name="input_x" )
 
 # First layer of weights
-W1 = tf.get_variable("W1", shape=[input_size, output_size], initializer=tf.contrib.layers.xavier_initializer() )   # weight
+W1 = tf.get_variable("W1", shape=[input_size, output_size], 
+                     initializer=tf.contrib.layers.xavier_initializer() )   # weight
 
 Qpred = tf.matmul(X, W1)
 

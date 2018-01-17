@@ -1,3 +1,5 @@
+#03_2_q_table_frozenlake_det.py
+
 import gym
 import numpy as np
 import matplotlib.pyplot as plt

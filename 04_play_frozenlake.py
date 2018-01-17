@@ -1,3 +1,5 @@
+#04_play_frozenlake.py
+
 import gym
 from gym.envs.registration import register
 import readchar # pip install readchar

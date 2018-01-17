@@ -1,3 +1,5 @@
+#04_play_frozenlake_windows.py
+
 import gym
 from gym.envs.registration import register
 from colorama import init
